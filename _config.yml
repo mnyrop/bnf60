@@ -1,7 +1,6 @@
 title: IIIF Annotation Demo
 description: ""
 baseurl: "/annotate"
-url: "http://marii.info"
 
 markdown: kramdown
 permalink: pretty
