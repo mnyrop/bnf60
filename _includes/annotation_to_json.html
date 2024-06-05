@@ -42,8 +42,9 @@
       for(var i =0; i < localStorage.length; i++){
         var key = localStorage.key(i);
         var matches = canvas_regex.exec(key);
+        matches = matches ? matches : key.indexOf('http') > -1 ? [key.split('/').slice(-1)] : null;
         if(matches != null) {
-          var canvas = matches[1];
+          var canvas = matches.length == 1 ? matches[0] : matches[1];
           var fileName = canvas + '.json';
           var fileContent = localStorage.getItem(key);
           if (fileContent.length > 2) {
